@@ -1,0 +1,52 @@
+<!-- Create a web page that have a paragraph with some dummy text. Near the paragraph have text fields to accept the following values:
+
+Border:
+
+red value
+green value
+blue value
+width
+Background color:
+
+red value
+green value
+blue value
+Finally, have a button that, when clicked, changes the border and background color to be as specified.
+You can use either the rgb() method or a color code, but you should tell the user what units they are in (00-FF or 0-255). -->
+<html>
+    <head>
+                <title>manipulate me senpai</title>
+                <link href = "manip.css"
+                rel = "stylesheet"
+                type = "text/css"/>
+ 
+   </head>
+<body>
+
+      
+        <p    style="position:fixed;top:20%;left:30%;width:40%; "  type="text" id="dummy">Don't hate me when you can change me.</p>
+       
+        <h1   style=position:absolute;top:33%;left:25%;width:40%; type="text" id="y">Select border color: </h1>
+        <button onclick="document.getElementById('dummy').style.borderColor = 'green';" style=background-color:green;position:absolute;top:35%;left:75%;width:10%;height:5%; type="text" id="bor" value = "bor_g">green</button>
+        <button onclick="document.getElementById('dummy').style.borderColor = 'red';" style=background-color:red;position:absolute;top:35%;left:55%;width:10%;height:5%; type="text" id="bor" value = "bor_r">red</button>
+        <button onclick="document.getElementById('dummy').style.borderColor = 'blue';" style=background-color:blue;position:absolute;top:35%;left:65%;width:10%;height:5%; type="text" id="bor" value = "bor_b">blue</button>
+         
+        <h1   style=position:absolute;top:38.2%;left:24%;width:40%; type="text" id="y">Select border width: </h1>
+        <input  style=position:absolute;top:41.5%;left:55%;width:10%; type="text" id="size" value = ""></input>
+        <!-- <button onclick="state.update()" style=position:absolute;top:40%;left:70%;width:10%;height:5%; type="text" id="check">Change</button> -->
+        <button onclick="document.getElementById('dummy').style.borderWidth = document.getElementById('size').value;" style=position:absolute;top:40%;left:65%;width:10%;height:5%; type="text" id="check">Change</button>
+       
+        <h1   style=position:absolute;top:43%;left:17.5%;width:40%; type="text" id="y">Select background color: </h1>
+       <button  onclick="document.body.style.backgroundColor = 'lightgreen';" style=background-color:green;position:absolute;top:45%;left:75%;width:10%;height:5%; type="text" id="bg" value = "bg_g">green</button>
+        <button  onclick="document.body.style.backgroundColor = '#F08080';" style=background-color:red;position:absolute;top:45%;left:55%;width:10%;height:5%; type="text" id="bg" value = "bg_r">red</button>
+        <button  onclick="document.body.style.backgroundColor = 'lightblue';" style=background-color:blue;position:absolute;top:45%;left:65%;width:10%;height:5%; type="text" id="bg" value = "bg_b">blue</button>
+      
+        <h1   style=position:absolute;top:47.8%;left:17.5%;width:40%; type="text" id="y">Select RGB values for inside border: </h1>
+        <h3   style=position:absolute;top:49.3%;left:42%;width:40%; type="text" id="y">(all values must be 0-255)</h3>
+        <input  style=position:absolute;top:51.5%;left:55%;width:10%; type="text" id="r"></input>
+        <input  style=position:absolute;top:51.5%;left:65%;width:10%; type="text" id="g" ></input>
+        <input  style=position:absolute;top:51.5%;left:75%;width:10%; type="text" id="b" ></input>
+        <button onclick="document.getElementById('dummy').style.backgroundColor = 'rgb('+document.getElementById('r').value+','+document.getElementById('g').value+','+document.getElementById('b').value+')';" style=position:absolute;top:50%;left:85%;width:10%;height:5%; type="text" id="check2">Change</button>
+        <!-- document.getElementById('dummy').style.backgroundColor = -->
+        <!-- rgb() -->
+</body>

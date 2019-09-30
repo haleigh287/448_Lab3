@@ -1,0 +1,98 @@
+<!-- Create a new webpage that has a single img tag and two buttons labeled previous and next. Your slideshow should...
+
+contain at least five pictures of your choice (appropriate for class)
+cycle through all the pictures
+wrap around to the beginning if I keep pushing next
+wrap around to the end if I keep pushing previous
+force the images to be all the same size regardless of the original image files' dimensions -->
+<html>
+    <head>
+      <title>endless cycle</title>
+  
+         <script type="text/javascript">
+         {
+          //arr["1.jpg",1.jpg',"2.jpg","3.jpg","4.jpg","6.jpg" ];
+          var state = {
+                 
+         // iterate: function(){
+          //   if(document.getElementById("pic").src == "baby.jpeg")
+          //   {
+          //     document.getElementById("pic").src = "rbg.jpg"; 
+          //   }
+          //    if(document.getElementById("pic").src == "rbg.jpg")
+          //   {
+          //     document.getElementById("pic").src = "bg.jpg";
+          //   }
+          // },
+          next: function () 
+          {
+            
+            var x = document.getElementById("number").innerHTML;
+            x++;
+           
+            document.getElementById("number").innerHTML= x;
+
+            //document.getElementById('picbox').src =arr[x];
+            state.display(x); 
+
+          },
+
+          previous: function ()
+          {
+            var x = document.getElementById("number").innerHTML;
+            if(x>0)document.getElementById("number").innerHTML= x-1;
+            else{ document.getElementById("number").innerHTML= 4;
+             state.display(4);
+          }
+          state.display(x-1);
+          },
+
+          display: function (y)
+          {
+
+            //if(document.getElementById("next"))
+            // let y = 100+x;
+            //var x =document.getElementById("picbox").value;
+            if(y%5 ==0)
+            {
+              document.getElementById('picbox').src ="6.jpg";
+                           // pic = "baby.jpeg";
+            }
+            if(y%5 ==1)
+            {
+              document.getElementById('picbox').src ="1.jpg";
+                            //pic = "rbg.jpg";
+            }
+            if(y%5 ==2)
+            {
+              document.getElementById('picbox').src ="2.jpg";
+                            //pic = "rbg.jpg";
+            }
+            if(y%5 ==3)
+            {
+              document.getElementById('picbox').src = "3.jpg";
+              //pic = "rbg.jpg";
+            }
+            if(y%5 ==4)
+            {
+              document.getElementById('picbox').src = "4.jpg";
+              //pic = "rbg.jpg";
+            }
+          }
+        }   
+      }
+         </script>
+
+    </head>
+<body>
+
+<p style=position:absolute;left:45%;width:5%;>TITLE</p>
+<img src= "1.jpg" style=position:absolute;top:10%;left:36%; height="50%" width="30%" id="picbox" value = 100;>
+<p style=position:absolute;top:42%;left:10%;width:10%;color:aliceblue; type="text" id="number" name="number" value=1>1</p>
+<!-- <h1   style=position:absolute;top:50%;left:33%;width:40%; value = 1; type="text" id="pic"></h1> -->
+<button onclick="state.next()" style=position:absolute;top:60%;left:50%;width:10%;height:5%; type="text" id="next" value="next">NEXT</button>
+<button onclick="state.previous()" style=position:absolute;top:60%;left:40%;width:10%;height:5%; type="text" id="prev" value="prev">PREVIOUS</button>
+
+
+</body>
+</html>

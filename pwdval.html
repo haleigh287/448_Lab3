@@ -1,0 +1,58 @@
+<!-- Create a webpage that allows the user to enter a password two times in order to validate it.
+
+Web page content:
+
+Two password fields
+first to enter the password and a second to verify it
+A button labelled "Validate" that alerts one of the following messages:
+Display informative error message if any of the following occur:
+the passwords entered don't match
+the passwords are not at least 8 characters long -->
+
+<html>
+    <head>
+      <title>Yay</title>
+         <script type="text/javascript">
+         var state = {
+                check: function () {
+                    var x = document.getElementById("p1").value;
+                    var y = document.getElementById("p2").value;
+                   
+                    if(x==y && x.length >7 && y.length >7)
+                   {
+                     document.getElementById("answer").innerHTML= "Passwords match";
+                     document.getElementById("answer").style.color = 'black';
+                     alert("Account Hypothetically created!!"); 
+                   }
+                   if(x!=y && x.length >7 && y.length >7)
+                   {
+                    document.getElementById("answer").innerHTML= "Please enter matching passwords";
+                    document.getElementById("answer").style.color = 'red';
+                   } 
+                    
+                    if(x.length < 8 || y.length < 8)
+                    {
+                    
+                      document.getElementById("answer").innerHTML= "Passwords must be at leat 8 characters long";
+                      document.getElementById("answer").style.color = 'red';
+                    }
+                }
+            }           
+
+         </script>
+
+    </head>
+<body>
+
+<h1   style=position:absolute;top:20.4%;left:35%;width:40%; type="text" id="y">Please enter password:</h1>
+<input  style=position:absolute;top:21.5%;left:51.5%;width:10%; type="text" id="p1" value = ""></input>
+
+
+<h1   style=position:absolute;top:30.4%;left:34.5%;width:40%; type="text" id="y">Please verify password:</h1>
+<input  style=position:absolute;top:33.4%;left:51.5%;width:10%; type="text" id="p2" value = ""></input>
+<button onclick="state.check()" style=position:absolute;top:38%;left:51.5%;width:10%;height:5%; type="text" id="check">Check</button>
+
+<h1 style=position:absolute;top:42%;left:40%;width:10%; type="text1" id="answer1" name="answer1" value="">Validity: </h1>
+<p style=position:absolute;top:44%;left:50%;width:100%; type="text" id="answer" name="answer" value=""></h1>
+</body>
+</html>
